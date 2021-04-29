@@ -1,8 +1,7 @@
-from django.db import models
 
 # Create your models here.
 
-class Calculator(models.Model):
+class Calculator():
     
     @staticmethod
     def getPercentage(goal, objective):
