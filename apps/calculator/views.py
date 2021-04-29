@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 
 from apps.player.serializers import PlayerSerializer
 
@@ -10,6 +11,7 @@ from .models import Calculator
 class CalculatorView(APIView):
     """This is the main view for Calculator
     """
+    permission_classes = (IsAuthenticated,)
 
     def get(self,request):
         """ This method process requests by the HTTP method GET
