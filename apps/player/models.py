@@ -10,4 +10,4 @@ class Player(models.Model):
     sueldo          = models.FloatField()
     bono            = models.FloatField()
     sueldo_completo = models.FloatField(null=True, blank=True)
-    equipo          = models.CharField(null=True, blank=True, max_length=15)
+    equipo          = models.CharField(max_length=15)

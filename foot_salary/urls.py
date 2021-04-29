@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# This array manage wich view will manage each endpoint 
 urlpatterns = [
     path('', include('apps.calculator.urls',namespace='calculator')),
     path('admin/', admin.site.urls),
