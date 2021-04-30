@@ -1,0 +1,26 @@
+version : '3.8'
+services:
+    foot-salary-api:
+        build:
+            context: ./
+            dockerfile: ./
+        tty: true
+        ports: 
+            - "8000:8000"
+        container_name: "foot-salary-api"
+        volumes:
+            - type: bind 
+              source: ./ 
+              target: /api
+
+        networks:
+            - foot-salary-network
+        environment:
+            DEBUG: 'true'
+        command: >
+            bash -c "python manage.py migrate
+            && python manage.py runserver 0.0.0.0:8000"
+
+networks:
+    foot-salary-network:
+        driver: bridge
